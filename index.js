@@ -27,7 +27,7 @@ const data = {
     labelWeb: chalk.white.bold("Web:"),
 
     npx: chalk.red("npx") + " " + chalk.white("arkadip"),
-    labelCard: chalk.white.bold("       Card:")
+    labelCard: chalk.white.bold("Card:")
 }
 
 const me = boxen(
@@ -43,9 +43,7 @@ const me = boxen(
         ``,
         `${data.labelCard}  ${data.npx}`,
         ``,
-        `${chalk.italic(
-            "I am currently studing for GATE 2022"
-        )}`,
+        `${chalk.italic("I am currently studing for")} ${chalk.bold("GATE 2022")}`,
         ``,
         `${chalk.italic("My inbox is always open. Whether you have a")}`,
         `${chalk.italic(
