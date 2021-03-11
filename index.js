@@ -43,7 +43,7 @@ const me = boxen(
         ``,
         `${data.labelCard}  ${data.npx}`,
         ``,
-        `${chalk.italic("I am currently studing for")} ${chalk.bold("GATE 2022")}`,
+        `${chalk.italic("I am currently studying for")} ${chalk.bold("GATE 2022")}`,
         ``,
         `${chalk.italic("My inbox is always open. Whether you have a")}`,
         `${chalk.italic(
