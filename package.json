@@ -1,34 +1,39 @@
 {
   "name": "arkadip",
   "version": "1.0.2",
-  "description": "",
-  "main": "index.js",
-  "bin": {
-    "arkadip": "index.js"
-  },
-  "scripts": {
-    "test": "node index.js",
-    "preversion": "git add CHANGELOG.md"
-  },
+  "description": "NPX Card for Arkadip Bhattacharya(@darkmatter18)",
   "keywords": [
     "arkadip",
     "npx",
     "npx arkadip",
     "npx card"
   ],
-  "license": "ISC",
-  "dependencies": {
-    "boxen": "^5.0.0",
-    "chalk": "^4.1.0",
-    "clear": "^0.1.0"
+  "homepage": "https://github.com/darkmatter18/npx-arkadip",
+  "bugs": {
+    "url": "https://github.com/darkmatter18/npx-arkadip/issues",
+    "email": "in2arkadipb13@gmail.com"
   },
+  "license": "ISC",
   "author": {
     "name": "Arkadip Bhattacharya",
     "email": "in2arkadipb13@gmail.com",
     "url": "https://www.arkadip.co"
   },
+  "main": "index.js",
+  "bin": {
+    "arkadip": "index.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/darkmatter18/npx-arkadip"
+  },
+  "scripts": {
+    "test": "node index.js",
+    "preversion": "git add CHANGELOG.md"
+  },
+  "dependencies": {
+    "boxen": "^5.0.0",
+    "chalk": "^4.1.0",
+    "clear": "^0.1.0"
   }
 }
