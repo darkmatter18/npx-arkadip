@@ -5,6 +5,8 @@
 const clear = require('clear');
 const chalk = require('chalk');
 const boxen = require('boxen');
+const inquirer = require("inquirer");
+const open = require('open');
 
 clear();
 
@@ -25,11 +27,11 @@ const data = {
     twitter: chalk.gray("https://twitter.com/") + chalk.cyan("ArkadipB21"),
     labelTwitter: chalk.white.bold("Twitter:"),
 
-    web: chalk.cyan("https://www.arkadip.me"),
-    labelWeb: chalk.white.bold("Web:"),
-
     npx: chalk.red("npx") + " " + chalk.white("arkadip"),
-    labelCard: chalk.white.bold("Card:")
+    labelCard: chalk.white.bold("Card:"),
+
+    email: 'in2arkadipb13@gmail.com',
+    resume_link: "https://drive.google.com/file/d/1CPX4atHgFKZCr6-dUlPXgcdVza6s5w_0/view?usp=sharing"
 }
 
 const me = boxen(
@@ -43,7 +45,6 @@ const me = boxen(
         `${data.labelTwitter}  ${data.twitter}`,
         `${data.labelGitHub}  ${data.github}`,
         `${data.labelLinkedIn}  ${data.linkedin}`,
-        `${data.labelWeb}  ${data.web}`,
         ``,
         `${data.labelCard}  ${data.npx}`,
         ``,
@@ -68,4 +69,46 @@ const me = boxen(
     }
 );
 
+const prompt = inquirer.createPromptModule();
+
+const questions = [
+    {
+        type: "list",
+        name: "action",
+        message: "What you want to do?",
+        choices: [
+            {
+                name: `Send me an ${chalk.green.bold("email")}?`,
+                value: () => {
+                    open(`mailto:${data.email}`);
+                    console.log("\nDone, see you soon at inbox.\n");
+                }
+            },
+            {
+                name: `See my ${chalk.magentaBright.bold("Resume")}?`,
+                value: () => {
+                    open(data.resume_link);
+                    console.log("\nDone, see you soon at inbox.\n");
+                }
+            },
+            {
+                name: "Just quit.",
+                value: () => {
+                    console.log("Hasta la vista.\n");
+                }
+            }
+        ]
+    }
+];
+
 console.log(me);
+
+const tip = [
+    `Tip: Try ${chalk.cyanBright.bold(
+        "cmd/ctrl + click"
+    )} on the links above`,
+    '',
+].join("\n");
+console.log(tip);
+
+prompt(questions).then(answer => answer.action());
