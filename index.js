@@ -13,6 +13,8 @@ const data = {
 
     work: `${chalk.white("Computer Science and Engineering Student at")} ${chalk.hex("#2b82b2").bold("GCETTB")}`,
     labelWork: chalk.white.bold("Work:"),
+
+    site: chalk.greenBright.bold("https://www.arkadip.me"),
     
     github: chalk.gray("https://github.com/") + chalk.green("darkmatter18"),
     labelGitHub: chalk.white.bold("GitHub:"),
@@ -35,6 +37,8 @@ const me = boxen(
         `${data.name}`,
         ``,
         `${data.work}`,
+        ``,
+        `${data.site}`,
         ``,
         `${data.labelTwitter}  ${data.twitter}`,
         `${data.labelGitHub}  ${data.github}`,
