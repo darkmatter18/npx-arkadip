@@ -32,7 +32,7 @@
     "preversion": "git add CHANGELOG.md"
   },
   "dependencies": {
-    "boxen": "^5.0.0",
+    "boxen": "^6.0.0",
     "chalk": "^4.1.0",
     "clear": "^0.1.0",
     "inquirer": "^8.0.0",
