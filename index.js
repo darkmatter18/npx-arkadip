@@ -13,10 +13,11 @@ clear();
 const data = {
     name: chalk.green.bold("Arkadip Bhattacharya"),
 
-    work: `${chalk.white("Computer Science and Engineering Student at")} ${chalk.hex("#2b82b2").bold("GCETTB")}`,
+    work: `${chalk.white("Trainee Engineer at")} ${chalk.hex("#2b82b2").bold("Digité, Inc.")}`,
     labelWork: chalk.white.bold("Work:"),
 
     site: chalk.greenBright.bold("https://www.arkadip.me"),
+    newSite: chalk.greenBright.bold("https://v2.arkadip.me"),
     
     github: chalk.gray("https://github.com/") + chalk.green("darkmatter18"),
     labelGitHub: chalk.white.bold("GitHub:"),
@@ -31,7 +32,7 @@ const data = {
     labelCard: chalk.white.bold("Card:"),
 
     email: 'in2arkadipb13@gmail.com',
-    resume_link: "https://drive.google.com/file/d/1CPX4atHgFKZCr6-dUlPXgcdVza6s5w_0/view?usp=sharing"
+    resume_link: "https://drive.google.com/file/d/1k_g-D_Ylju8tLB4wwoU8D6LMoI9PP-TC/view?usp=sharing"
 }
 
 const me = boxen(
@@ -41,6 +42,7 @@ const me = boxen(
         `${data.work}`,
         ``,
         `${data.site}`,
+        `${data.newSite}`,
         ``,
         `${data.labelTwitter}  ${data.twitter}`,
         `${data.labelGitHub}  ${data.github}`,
