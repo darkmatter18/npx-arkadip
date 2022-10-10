@@ -1,5 +1,5 @@
 <h1 align="center">
-    <i>npx arkadip</i>
+    <b>npx arkadip</b>
 </h1>
 
 ```bash
