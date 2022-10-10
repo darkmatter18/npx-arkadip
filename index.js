@@ -13,7 +13,7 @@ clear();
 const data = {
     name: chalk.green.bold("Arkadip Bhattacharya"),
 
-    work: `${chalk.white("Trainee Engineer at")} ${chalk.hex("#2b82b2").bold("Digité, Inc.")}`,
+    work: `${chalk.white("Software Engineer at")} ${chalk.hex("#2b82b2").bold("Digité, Inc.")}`,
     labelWork: chalk.white.bold("Work:"),
 
     site: chalk.greenBright.bold("https://www.arkadip.me"),
@@ -31,8 +31,8 @@ const data = {
     npx: chalk.red("npx") + " " + chalk.white("arkadip"),
     labelCard: chalk.white.bold("Card:"),
 
-    email: 'in2arkadipb13@gmail.com',
-    resume_link: "https://drive.google.com/file/d/1k_g-D_Ylju8tLB4wwoU8D6LMoI9PP-TC/view?usp=sharing"
+    email: 'hi@arkadip.dev',
+    resume_link: "https://drive.google.com/file/d/1mVGtJcUfGc6xPQFJRaqMAC9d6po_-tAn/view?usp=sharing"
 }
 
 const me = boxen(
@@ -50,7 +50,7 @@ const me = boxen(
         ``,
         `${data.labelCard}  ${data.npx}`,
         ``,
-        `${chalk.italic("I am currently studying for")} ${chalk.bold("GATE 2022")}`,
+        `${chalk.italic("I’m a software engineer specializing in building Web Backend and Cloud based Solutions. Currently, I’m focused on building accessible, Agri-tech product at")} ${chalk.bold("Digité, Inc.")}`,
         ``,
         `${chalk.italic("My inbox is always open. Whether you have a")}`,
         `${chalk.italic(
