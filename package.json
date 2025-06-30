@@ -11,13 +11,13 @@
   "homepage": "https://github.com/darkmatter18/npx-arkadip",
   "bugs": {
     "url": "https://github.com/darkmatter18/npx-arkadip/issues",
-    "email": "in2arkadipb13@gmail.com"
+    "email": "hi@arkadip.dev"
   },
   "license": "ISC",
   "author": {
     "name": "Arkadip Bhattacharya",
-    "email": "in2arkadipb13@gmail.com",
-    "url": "https://www.arkadip.co"
+    "email": "hi@arkadip.dev",
+    "url": "https://www.arkadip.dev"
   },
   "main": "index.js",
   "bin": {
@@ -36,6 +36,7 @@
     "chalk": "^5.2.0",
     "clear": "^0.1.0",
     "inquirer": "^9.1.4",
+    "moment": "^2.30.1",
     "open": "^9.1.0"
   }
 }
