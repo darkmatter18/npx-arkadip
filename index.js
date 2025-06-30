@@ -7,18 +7,44 @@ const chalk = require('chalk');
 const boxen = require('boxen');
 const inquirer = require("inquirer");
 const open = require('open');
+const moment = require('moment');
 
 clear();
+
+const expDuration = moment.duration(moment(moment.now()).diff(moment([2021, 11, 20])));
+
+const experiences = [
+    {
+        company: "Cognitree",
+        role: "Software Engineer",
+        startDate: moment([2025, 3, 1]),
+        endDate: moment(moment.now())
+    },
+    {
+        company: "Nimblework, Inc.",
+        role: "Senior Software Engineer",
+        startDate: moment([2024, 6, 1]) ,
+        endDate: moment([2025, 2, 1])
+    },
+    {
+        company: "Nimblework, Inc.",
+        role: "Software Engineer",
+        startDate: moment([2021, 11, 20]),
+        endDate: moment([2024, 5, 1])
+    },
+]
 
 const data = {
     name: chalk.green.bold("Arkadip Bhattacharya"),
 
-    work: `${chalk.white("Software Engineer at")} ${chalk.hex("#2b82b2").bold("Digité, Inc.")}`,
-    labelWork: chalk.white.bold("Work:"),
+    experienceYrs: `${chalk.green(expDuration.asYears().toFixed(2))} Yrs (${chalk.green.bold(Math.round(expDuration.asDays()))} Days)`,
+    labelExperienceYrs: chalk.gray("Total Experience:"),
 
-    site: chalk.greenBright.bold("https://www.arkadip.me"),
-    newSite: chalk.greenBright.bold("https://v2.arkadip.me"),
-    
+    work: `${chalk.cyan(experiences[0].role)} at ${chalk.magenta.bold(experiences[0].company)} ${chalk.yellow(`(${moment(experiences[0].startDate).format("MMM YYYY")} - now)`)}`,
+    labelWork: chalk.gray("Currently working:"),
+
+    prevExperiences : experiences.slice(1).map(experience => `${chalk.cyan(experience.role)} at ${chalk.magenta.bold(experience.company)} (${chalk.yellow(moment(experience.startDate).format("MMM YYYY"))} - ${chalk.yellow(moment(experience.endDate).format("MMM YYYY"))})`),
+
     github: chalk.gray("https://github.com/") + chalk.green("darkmatter18"),
     labelGitHub: chalk.white.bold("GitHub:"),
 
@@ -28,29 +54,30 @@ const data = {
     twitter: chalk.gray("https://twitter.com/") + chalk.cyan("ArkadipB21"),
     labelTwitter: chalk.white.bold("Twitter:"),
 
-    npx: chalk.red("npx") + " " + chalk.white("arkadip"),
-    labelCard: chalk.white.bold("Card:"),
-
+    site: "https://www.arkadip.dev",
     email: 'hi@arkadip.dev',
-    resume_link: "https://drive.google.com/file/d/1mVGtJcUfGc6xPQFJRaqMAC9d6po_-tAn/view?usp=sharing"
+    resume_link: "https://arkadip.dev/resume.pdf"
 }
 
 const me = boxen(
     [
         `${data.name}`,
         ``,
-        `${data.work}`,
+        `${chalk.italic("I’m a software engineer specializing in building Microservice, scalable,")}`,
+        `${chalk.italic("highly available, and fault tolerant, cloud native applications.")}`,
         ``,
-        `${data.site}`,
-        `${data.newSite}`,
+        `${data.labelExperienceYrs} ${data.experienceYrs}`,
+        ``,
+        `${data.labelWork} ${data.work}`,
+        ``,
+        chalk.gray("Previous Experiences"),
+        data.prevExperiences.join("\n"),
         ``,
         `${data.labelTwitter}  ${data.twitter}`,
         `${data.labelGitHub}  ${data.github}`,
         `${data.labelLinkedIn}  ${data.linkedin}`,
         ``,
-        `${data.labelCard}  ${data.npx}`,
-        ``,
-        `${chalk.italic("I’m a software engineer specializing in building Web Backend and Cloud based Solutions. Currently, I’m focused on building accessible, Agri-tech product at")} ${chalk.bold("Digité, Inc.")}`,
+        `${chalk.greenBright.bold(data.site)}`,
         ``,
         `${chalk.italic("My inbox is always open. Whether you have a")}`,
         `${chalk.italic(
@@ -80,23 +107,30 @@ const questions = [
         message: "What you want to do?",
         choices: [
             {
-                name: `Send me an ${chalk.green.bold("email")}?`,
+                name: `Send me an ${chalk.greenBright.bold("email")}.`,
                 value: () => {
                     open(`mailto:${data.email}`);
-                    console.log("\nDone, see you soon at inbox.\n");
+                    console.log(`${chalk.greenBright.bold("Done")}, see you soon at inbox.\n`);
                 }
             },
             {
-                name: `See my ${chalk.magentaBright.bold("Resume")}?`,
+                name: `See my ${chalk.magentaBright.bold("Resume")}.`,
                 value: () => {
                     open(data.resume_link);
-                    console.log("\nDone, see you soon at inbox.\n");
+                    console.log(`${chalk.greenBright.bold("Done")}, Hope you like my resume. :)\n`);
                 }
             },
             {
-                name: "Just quit.",
+                name: `Visit my ${chalk.yellowBright.bold("Portfolio")}.`,
                 value: () => {
-                    console.log("Hasta la vista.\n");
+                    open(data.site);
+                    console.log(`${chalk.greenBright.bold("Done")}, Hope you like my Portfolio. \n`);
+                }
+            },
+            {
+                name: `Just ${chalk.red.bold("bye")}.`,
+                value: () => {
+                    console.log(chalk.gray.bold.italic("Hasta la vista.\n"));
                 }
             }
         ]
